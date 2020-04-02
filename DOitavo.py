@@ -17,6 +17,7 @@ next()
 l = [x + y + z for x in 'abc' for y in 'lmn' for z in 'xyz']
 print(l)
 '''
+'''
 from random import randint
 pessoas = int(input('Digite o numero de pessoas: '))
 rep = int(input('Numero de repetiç~oes: '))
@@ -28,7 +29,14 @@ for lista in l:
         a.remove(data)
         if(data in a):
             favo += 1
-            break
-            
+            break      
             
 print(f'Porcentagem: {favo/rep*100}')
+'''
+'''
+l1 = ['Ovos', 'Presunto', 'Frange']
+l2 = [5, 2, 13]
+a = zip(l1, l2)
+print(a)
+print(dict(a))
+'''
