@@ -30,18 +30,14 @@ for k, v in corta(lista).items():
     lista_mercado.write(f'| {k:^25} | R${v:<7} |\n')
 lista_mercado.close()
 '''
+'''
 import pickle
 
-def calc(n,p):
-    if(n<=5000):
-        return (n/p*100)+n
-    else:
-        return n
 def main():
     porc = int(input('Valor porcentual do aumento: '))
 
     gastos = list(map((lambda x: float(x.replace('\n', ''))), open('gastos.txt', 'r')))
-    g_corrigidos = list(map((lambda x: calc(x, porc)), gastos))
+    g_corrigidos = list(map((lambda x: (x/porc*100)+x), gastos))
 
     with open('Gastos_Corrigidos.txt', 'w') as arq:
         for g in g_corrigidos:
@@ -52,3 +48,97 @@ def main():
         pickle.dump(g_corrigidos, arq)
 
 main()
+'''
+'''
+import pickle
+
+def main():
+    #Define o limite
+    limite = float(input('Digite um valor limite de correç~ao: '))
+    #Ordena as listas do arquivo Lista.obj
+    with open('Lista.obj', 'rb') as arq:
+        g_anterior = pickle.load(arq)
+        g_c_anterior = pickle.load(arq)
+    #Cria lista
+    lista_correcao = list(filter((lambda x: x <= limite), map((lambda x, y: y-x), g_anterior, g_c_anterior)))
+    #Soma os n'umeros
+    print(f'A soma dos valores no limite da correç~ao R${sum(lista_correcao):.2f}')
+
+main()
+'''
+'''
+import functools
+
+def olhe_soma(x, y):
+    print(f'Adicionando |{x}| a |{y}|')
+    return x+y
+
+p = str(input('Digite um palavra: '))
+print(functools.reduce(olhe_soma, p))
+'''
+'''
+def verificar(text):
+    while True:
+        try:
+            esc = int(input(text))
+            if(1<=esc<=3):
+                return esc
+            else:
+                raise ValueError
+        except ValueError:
+            print('ERRO! Digite um valor valido!')
+
+def main():
+    while True:
+        print('-=-'*20)
+        esc = verificar('1 - Definir Senha\n2 - Verificar Usuario\n3 - Sair\nOpç~ao: ')
+        print('-=-'*20)
+        if(esc == 1):
+            try:
+                senha = int(input('Senha: '))
+            except:
+                print('Erro!')
+            else:
+                senha = str(senha)
+        elif(esc == 2):
+            try:
+                v_senha = int(input('Digite sua senha: '))
+            except:
+                print('Erro!')
+            else:
+                v_senha = str(v_senha)
+                verifica = all(list(map((lambda ns, nv: ns==nv and len(senha)==len(v_senha)), senha, v_senha)))
+                if verifica:
+                    print('Logado com sucesso!!!')
+                else:
+                    print('Senha Invalida!')
+        elif(esc == 3):
+            print('Ate logo...')
+            break
+        else:
+            print('ERRO! Digite um valor valido!')
+
+main()
+'''
+'''
+from random import randint
+
+def calc(n):
+    if(n < 3):
+        return True
+    else:
+        return False
+
+vezes = int(input('Lança nº vezes? '))
+jogadas = [calc(randint(1, 6)) for v in range(vezes)]
+if any(jogadas):
+    print(f'A Probabilidade de cair 1 numero menor que 3...\n==>1/{vezes}\n==>Total:{jogadas.count(True)}/{vezes}')
+else:
+    print(f'A Probabilidade foi 0/{vezes}')
+'''
+'''
+import functools
+
+m = functools.reduce((lambda y=0, x=0: y if int(y.replace('\n', ''))>int(x.replace('\n', '')) else x), open('nums.txt', 'r'))
+print(f'O maior numero e:{m}')
+'''
