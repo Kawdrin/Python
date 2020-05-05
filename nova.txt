@@ -1,5 +1,0 @@
-|          PRODUTO          |   PREÇO   |
-|       Dúzia de Ovos       | R$6.50    |
-|   Saco de 1kg de Açucar   | R$4.70    |
-|        Detergente         | R$5.50    |
-|    1kg de File Mignon     | R$40.83   |

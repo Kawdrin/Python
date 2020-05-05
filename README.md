@@ -1,9 +1,0 @@
-# Python
-
-## Aprendendo Python  :D
-# Python
-
-## Aprendendo Python  :D
-# Python
-
-> Aprendendo Python  :D
