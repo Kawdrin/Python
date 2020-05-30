@@ -1,0 +1,8 @@
+ALTURA = 620
+LARGURA = 500
+
+CANVAS_ALT = 600
+CANVAS_LAR = 450
+
+VERDANA = ('Verdana', '18', 'bold')
+AZUL = '#1CCEDF'
