@@ -1,0 +1,12 @@
+Bg:
+#1D1F28
+
+|  Claro  |  Escuro |    
+| #0D5EB8 | #273753 |
+| #F18098 | #FF5555 |
+| #5FDACA | #2FE1C6 |
+| #F0A276 | #FD8042 |
+| #8999F1 | #5555FF |
+| #C477DB | #AF4ACE |
+| #7EE6F2 | #49DCEC |
+| #FDFDFD | #BEBEC1 |
